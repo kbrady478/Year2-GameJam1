@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class player_Movement : MonoBehaviour
@@ -14,52 +15,54 @@ public class player_Movement : MonoBehaviour
     [Header("Movement")] 
     [SerializeField] private float max_Move_Speed;
     [SerializeField] private float move_Speed_Increase; // to increase as player holds input
-    [SerializeField] private float move_Speed_Decrease; // to decrease after player lets go of input
     [SerializeField] private float current_Move_Speed = 0f;
+    [SerializeField] private float player_Rotation_Speed;
     
     private Vector3 move_Direction;
+    private Input last_Input;
     
     private float horizontal_Input;
     private float vertical_Input;
-    private bool is_Inputing;
-    private bool is_Moving;
 
+
+    public Vector3 velocity;
     
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        is_Inputing = false;
-        is_Moving = false;
+
     }// end Start()
 
     // fix rotation of game object
-    // remove decel? maybe reuse
-    // fix movement speed carrying over between axis (going forward accelerates your speed when going back
-    
+   
     
     private void FixedUpdate()
     {
         Calculate_Direction();
+        velocity = rb.linearVelocity.normalized;
+
+        // Rotate body in direction of camera
+        gameObject.transform.rotation = Quaternion.Euler(camera_Transform.rotation.eulerAngles.x, camera_Transform.rotation.eulerAngles.y, camera_Transform.rotation.eulerAngles.z);
         
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        // Reset speed when input is let go, stops forward momentum from increasing backward momentum
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
         {
-            is_Inputing = true;
-            is_Moving = true;
-            Accelerate();
-            rb.AddForce(move_Direction.normalized * current_Move_Speed * 10f, ForceMode.Force);
-        }
-        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+            current_Move_Speed = 0;
+           //rb.linearVelocity = new Vector3(0 , 0, 0);
+        }        
+        
+        // Increase momentum on input if current velocity is below the limit
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            is_Inputing = false;
-            
+            if (velocity.magnitude >= max_Move_Speed)
+                rb.linearVelocity = velocity.normalized * max_Move_Speed;  
+            else
+            {
+                Accelerate();
+                rb.AddForce(move_Direction.normalized * current_Move_Speed * 10f, ForceMode.Force);
+            }
         }
-
-        if (is_Inputing == false && is_Moving == true)
-        {
-            Decelerate();
-            rb.AddForce(-move_Direction.normalized * current_Move_Speed * 10f, ForceMode.Force);
-        }
-
+        
     }// end FixedUpdate()
 
     private void Calculate_Direction()
@@ -84,18 +87,5 @@ public class player_Movement : MonoBehaviour
             current_Move_Speed += move_Speed_Increase * Time.deltaTime;
         
     }// end Accelerate()
-
-    private void Decelerate()
-    {
-        if (current_Move_Speed <= 0)
-        {
-            current_Move_Speed = 0;
-            is_Moving = false;
-        }
-        
-        if (current_Move_Speed > 0)
-            current_Move_Speed -= move_Speed_Decrease * Time.deltaTime;
-        
-    }// end Decelerate()
     
 }// end script
