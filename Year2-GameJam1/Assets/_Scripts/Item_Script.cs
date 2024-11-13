@@ -4,7 +4,7 @@ public class Item_Script : MonoBehaviour, IInteractable
 {
     private GameObject target_Position;
     private Rigidbody rb;
-    private bool being_Held;
+    public bool being_Held;
     
     
     void Start()
@@ -18,7 +18,12 @@ public class Item_Script : MonoBehaviour, IInteractable
     {
         if(being_Held)
             gameObject.transform.position = Vector3.Lerp(transform.position, target_Position.transform.position, Time.deltaTime * 10);
-        
+     
+        if (being_Held && Input.GetKeyDown(KeyCode.E))
+        {
+            being_Held = false;
+            rb.isKinematic = false;
+        }
     }// end Update()
 
 
@@ -28,11 +33,6 @@ public class Item_Script : MonoBehaviour, IInteractable
         {
             being_Held = true;
             rb.isKinematic = true;
-        }
-        else
-        {
-            being_Held = false;
-            rb.isKinematic = false;
         }
         
     }// end Interact()
