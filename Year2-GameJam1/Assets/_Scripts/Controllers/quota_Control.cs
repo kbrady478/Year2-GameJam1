@@ -22,7 +22,7 @@ public class quota_Control : MonoBehaviour
         foreach (GameObject organic in organics)
             amount_Of_Objects_Left++;
     }// end Start()
-    
+
     public void Increase_Quota()
     {
         current_Deposited++;
@@ -35,11 +35,9 @@ public class quota_Control : MonoBehaviour
     public void Decrease_Available()
     {
         amount_Of_Objects_Left--;
-
+        
         if (amount_Of_Objects_Left < quota)
-        {
             dialogue_Script.Start_Dialogue("Bad Ending");
-        }
         else
             dialogue_Script.Start_Dialogue("Angry");
     }// end Decrease_Available()

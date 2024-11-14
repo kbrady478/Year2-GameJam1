@@ -7,12 +7,14 @@ public class Item_Script : MonoBehaviour, IInteractable
     public bool being_Held;
     private bool can_Interact = true;
     private float interact_Cooldown = 0.1f;
+    private AudioSource audio_Source;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         target_Position = GameObject.FindGameObjectWithTag("Hold Point");
         being_Held = false;
+        audio_Source = GameObject.FindGameObjectWithTag("Pick_Up_Audio").GetComponent<AudioSource>();
     }// end Start()
 
     void Update()
@@ -42,6 +44,7 @@ public class Item_Script : MonoBehaviour, IInteractable
         
         if (being_Held == false)
         {
+            audio_Source.Play();
             being_Held = true;
             rb.isKinematic = true;
         }

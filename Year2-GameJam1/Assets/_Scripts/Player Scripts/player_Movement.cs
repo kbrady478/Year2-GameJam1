@@ -9,6 +9,7 @@ public class player_Movement : MonoBehaviour
 {
     [Header("General")] 
     [SerializeField] private Transform camera_Transform;
+    [SerializeField] private AudioSource jetpack_Clip;
     
     private Rigidbody rb;
 
@@ -23,8 +24,9 @@ public class player_Movement : MonoBehaviour
     
     private float horizontal_Input;
     private float vertical_Input;
+    private bool audio_Playing = false;
 
-
+    
     public Vector3 velocity;
     
     private void Start()
@@ -47,13 +49,20 @@ public class player_Movement : MonoBehaviour
         // Reset speed when input is let go, stops forward momentum from increasing backward momentum
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
         {
+            jetpack_Clip.Pause();
+            audio_Playing = false;
             current_Move_Speed = 0;
-           //rb.linearVelocity = new Vector3(0 , 0, 0);
         }        
         
         // Increase momentum on input if current velocity is below the limit
         else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
+            if(audio_Playing == false)
+            {
+                jetpack_Clip.Play();
+                audio_Playing = true;
+            }
+            
             if (velocity.magnitude >= max_Move_Speed)
                 rb.linearVelocity = velocity.normalized * max_Move_Speed;  
             else

@@ -20,6 +20,8 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
     [SerializeField] private GameObject dialogue_Box_Background; // A repeat of object above to make darker, not needed in future projects
     [SerializeField] private TextMeshProUGUI text_Component;
     [SerializeField] private float text_Speed;
+    // Audio
+    [SerializeField] private AudioSource talking_Clip;
 
     [Header("Dialogue")] // Dialogue types, contain individual lines
     [SerializeField] private string[] starting_Dialogue;
@@ -84,6 +86,7 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
             else
             {
                 StopAllCoroutines();
+                talking_Clip.Pause();
                 text_Component.text = dialogue[current_Dialogue_String_I][current_Dialogue_Line_I];
             }
         }
@@ -110,6 +113,8 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
         
         current_Dialogue_Line_I = 0;
         
+        
+        
         dialogue_Box.SetActive(true);
         dialogue_Box_Background.SetActive(true);
         StartCoroutine(Type_Line());
@@ -117,6 +122,8 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
 
     IEnumerator Type_Line()
     {
+        talking_Clip.Play();
+        
         // for each letter in the current line of the current dialogue
         foreach (char c in dialogue[current_Dialogue_String_I][current_Dialogue_Line_I].ToCharArray())
         {
@@ -124,10 +131,14 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(text_Speed);
         }
         
+        talking_Clip.Pause();
+        
     }// end Type_Line()
 
     private void Next_Line()
     {
+        talking_Clip.Pause();
+        
         if (current_Dialogue_Line_I < dialogue[current_Dialogue_String_I].Length - 1)
         {
             current_Dialogue_Line_I++;

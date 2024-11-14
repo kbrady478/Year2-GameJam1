@@ -3,7 +3,7 @@ using UnityEngine;
 public class organic_Bin : MonoBehaviour
 {
     [SerializeField] private quota_Control quota_Script;
-    
+    [SerializeField] private AudioSource audioSource;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +12,7 @@ public class organic_Bin : MonoBehaviour
         if (other.CompareTag("Metal"))
             quota_Script.Decrease_Available();
         
+        audioSource.Play();
         Destroy(other.gameObject);
     }
 }

@@ -18,8 +18,6 @@ public class boundary_Control : MonoBehaviour
         {
             StartCoroutine(Reset_Player());
         }
-        else if (other.tag == "Metal" || other.tag == "Organic")
-            quota.amount_Of_Objects_Left--;
     }
 
     private IEnumerator Reset_Player()
