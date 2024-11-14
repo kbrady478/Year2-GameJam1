@@ -8,7 +8,7 @@ public class quota_Control : MonoBehaviour
     [SerializeField] private int quota;
     
     [Header("For Display - Do Not Change")]
-    [SerializeField] private int amount_Of_Objects_Left;
+    public int amount_Of_Objects_Left;
     [SerializeField] private int current_Deposited;
 
     

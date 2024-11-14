@@ -105,7 +105,7 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
             current_Dialogue_String_I = 3;
         if (dialogue_Type == "Interact")
             current_Dialogue_String_I = 4;
-        if (dialogue_Type == "Out-Of Bounds")
+        if (dialogue_Type == "Out Of Bounds")
             current_Dialogue_String_I = 5;
         
         current_Dialogue_Line_I = 0;
