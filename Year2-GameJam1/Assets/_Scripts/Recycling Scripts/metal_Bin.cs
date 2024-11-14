@@ -9,9 +9,9 @@ public class metal_Bin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Metal"))
-            quota_Script.current_Deposited++;
+            quota_Script.Increase_Quota();
         if (other.CompareTag("Organic"))
-            print("bad");
+            quota_Script.Decrease_Available();
         
         Destroy(other.gameObject);
     }
