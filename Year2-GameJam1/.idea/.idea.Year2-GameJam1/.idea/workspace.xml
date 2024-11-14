@@ -6,19 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3c97ec52-1d78-4316-88c4-c24057fa6750" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Year2-GameJam1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Year2-GameJam1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Audio/jetpack.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Audio/jetpack.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Movement_Dev.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Movement_Dev.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Item_Script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Item_Script.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player Scripts/player_Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player Scripts/player_Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Recycling Scripts/metal_Bin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Recycling Scripts/metal_Bin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Recycling Scripts/organic_Bin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Recycling Scripts/organic_Bin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start Menu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start Menu.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/alien_Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/alien_Dialogue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/boundary_Control.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/boundary_Control.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/fade_Controller.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/fade_Controller.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/quota_Control.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/quota_Control.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +17,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/end_Control.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1

@@ -15,15 +15,17 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
     private player_Movement player_Movement_Script;
     [SerializeField] private Camera player_Camera;
     private camera_Controller camera_Controller_Script;
-    // Components for functional dialogue
+    
+    [SerializeField] private end_Control end_Control_Script;
+    
+    [Header("Dialogue Functionality")]
     [SerializeField] private GameObject dialogue_Box;
     [SerializeField] private GameObject dialogue_Box_Background; // A repeat of object above to make darker, not needed in future projects
     [SerializeField] private TextMeshProUGUI text_Component;
     [SerializeField] private float text_Speed;
-    // Audio
     [SerializeField] private AudioSource talking_Clip;
-
-    [Header("Dialogue")] // Dialogue types, contain individual lines
+    
+    [Header("Dialogue Text")] // Dialogue types, contain individual lines
     [SerializeField] private string[] starting_Dialogue;
     [SerializeField] private string[] good_Ending_Dialogue;
     [SerializeField] private string[] bad_Ending_Dialogue;
@@ -148,6 +150,12 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
         // Ending + resetting dialogue
         else
         {
+            // End game if ending dialogue is over
+            if (current_Dialogue_String_I == 1 || current_Dialogue_String_I == 2)
+            {
+                StartCoroutine(end_Control_Script.Start_Ending());
+            }
+            
             if (current_Dialogue_String_I == 0 && intro_Finished == false)
                 intro_Finished = true;
                 
