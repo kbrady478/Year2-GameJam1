@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3c97ec52-1d78-4316-88c4-c24057fa6750" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Year2-GameJam1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Year2-GameJam1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scenes/Movement_Dev.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Scenes/Movement_Dev.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Quota Slider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Quota Slider.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Controllers/quota_Control.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Controllers/quota_Control.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Menu Scripts/MenuScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Menu Scripts/MenuScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
       <workItem from="1731444150896" duration="755000" />
       <workItem from="1731589473125" duration="9529000" />
       <workItem from="1731682392855" duration="1164000" />
-      <workItem from="1731685717077" duration="371000" />
+      <workItem from="1731685717077" duration="2135000" />
     </task>
     <servers />
   </component>

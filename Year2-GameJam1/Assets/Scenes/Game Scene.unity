@@ -276,6 +276,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4db0eb8ded50c2eba812fd4029af04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &986587884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4471161791621398331, guid: 67eb5f39608ace456901123975d55a15, type: 3}
+  m_PrefabInstance: {fileID: 1414571080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1033972156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,6 +377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2576102154291821299, guid: 67eb5f39608ace456901123975d55a15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8080698160660255531, guid: 67eb5f39608ace456901123975d55a15, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -450,6 +459,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080698160660255531, guid: 67eb5f39608ace456901123975d55a15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341903969585317408, guid: 67eb5f39608ace456901123975d55a15, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -802,6 +815,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8539207426403560406, guid: e2e966d42176f6c398a66ff684826255, type: 3}
+      propertyPath: quota_Bar
+      value: 
+      objectReference: {fileID: 986587884}
     - target: {fileID: 8539207426403560406, guid: e2e966d42176f6c398a66ff684826255, type: 3}
       propertyPath: dialogue_Script
       value: 
