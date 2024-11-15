@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e2c22c3615d25ff99f95352ac1e400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quota_Bar: {fileID: 0}
   dialogue_Script: {fileID: 0}
   quota: 1
   amount_Of_Objects_Left: 0
