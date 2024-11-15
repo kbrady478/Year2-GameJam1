@@ -816,6 +816,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8539207426403560406, guid: e2e966d42176f6c398a66ff684826255, type: 3}
+      propertyPath: quota
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539207426403560406, guid: e2e966d42176f6c398a66ff684826255, type: 3}
       propertyPath: quota_Bar
       value: 
       objectReference: {fileID: 986587884}
