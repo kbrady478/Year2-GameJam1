@@ -11,7 +11,7 @@ public class end_Control : MonoBehaviour
     {
         yield return StartCoroutine(fade_Controller.Fade_To_Black());
         
-        SceneManager.LoadScene("Temp End");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }// end Start_Ending()
     
 }// end script
