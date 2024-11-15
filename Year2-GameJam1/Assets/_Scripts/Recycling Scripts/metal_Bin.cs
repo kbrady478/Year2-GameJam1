@@ -8,6 +8,9 @@ public class metal_Bin : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Metal") == false && other.CompareTag("Organic") == false)
+            return;
+        
         if (other.CompareTag("Metal"))
             quota_Script.Increase_Quota();
         if (other.CompareTag("Organic"))
