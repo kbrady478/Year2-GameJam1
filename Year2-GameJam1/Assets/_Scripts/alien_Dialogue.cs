@@ -32,7 +32,10 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
     [SerializeField] private string[] angry_Dialogue;
     [SerializeField] private string[] interact_Dialogue;
     [SerializeField] private string[] out_Of_Bounds_Dialogue;
-    
+    [SerializeField] private Animator twink_animator;
+    [SerializeField] private Animator twink_face_animator;
+
+
     private string[][] dialogue = new string[6][]; // Array for dialogue types
     
     [Header("For Display - Do Not Change")] // To iterate through dialogue type and line
@@ -46,6 +49,7 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
     
     void Start()
     {
+
         text_Component.text = string.Empty;
 
         player_Interactor_Script = player_Controller.GetComponent<player_Interactor>();
@@ -67,11 +71,13 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
     {
         if (in_Dialogue == false)
             return;
-        
+
         player_Interactor_Script.enabled = false;
         player_Movement_Script.enabled = false;
         camera_Controller_Script.enabled = false;
-        
+
+
+
         // Face player towars alien
         Vector3 direction_To_Alien = transform.position - player_Camera.transform.position;
         Quaternion target_Rotation = Quaternion.LookRotation(direction_To_Alien);
@@ -83,6 +89,7 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
             if (text_Component.text == dialogue[current_Dialogue_String_I][current_Dialogue_Line_I])
             {
                 Next_Line();
+
             }
 
             else
@@ -90,15 +97,18 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
                 StopAllCoroutines();
                 talking_Clip.Pause();
                 text_Component.text = dialogue[current_Dialogue_String_I][current_Dialogue_Line_I];
+
+
             }
         }
+        AnimationFunction(); // Checking if the player is in dialogue, and if so, to play the correct animations. Very bad as it is in Update and thus constantly running every frame.
         
     }// end Update()
 
     public void Start_Dialogue(string dialogue_Type)
     {
         in_Dialogue = true;
-        
+
         // Assign the correct array
         if (dialogue_Type == "Start Dialogue")
             current_Dialogue_String_I = 0;
@@ -120,6 +130,7 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
         dialogue_Box.SetActive(true);
         dialogue_Box_Background.SetActive(true);
         StartCoroutine(Type_Line());
+
     }// end Start_Dialogue()
 
     IEnumerator Type_Line()
@@ -175,5 +186,19 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
     {
         Start_Dialogue("Interact");
     }// end Interact()
+    public void AnimationFunction() //for activating the animations.
+    {
+        if (in_Dialogue == true)
+        {
+            twink_animator.SetBool("BeIdle", false); //Sets twink back to his talking anim
+            twink_face_animator.SetBool("twinkIsTalking", true); // plays mouth opening and closing animation
+        }
+        else
+        {
+            twink_animator.SetBool("BeIdle", true); //Sets twink back to his talking anim
+            twink_face_animator.SetBool("twinkIsTalking", false); // mouth stops yapping
+        }
+    }
+    
     
 }// end script
