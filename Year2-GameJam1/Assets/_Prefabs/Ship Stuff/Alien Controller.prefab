@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3062270355672147019}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7601, y: 2.3793032, z: 1.7601}
+  m_LocalRotation: {x: -0, y: 0.99864036, z: -0, w: 0.052129593}
+  m_LocalPosition: {x: 0, y: -0.29, z: 0}
+  m_LocalScale: {x: 4.4238176, y: 5.980117, z: 4.4238176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 731813487657087280}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 174.024, z: 0}
 --- !u!33 &2620670701327431842
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3062270355672147019}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 7698624583013853641, guid: 875894c6d3ecf2a4dbd99dd9a44fab17, type: 3}
 --- !u!23 &5686645927857430223
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -157,12 +157,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_Controller: {fileID: 0}
   player_Camera: {fileID: 0}
+  end_Control_Script: {fileID: 0}
   dialogue_Box: {fileID: 0}
   dialogue_Box_Background: {fileID: 0}
   text_Component: {fileID: 0}
   text_Speed: 0.07
   talking_Clip: {fileID: 0}
-  end_Control_Script: {fileID: 0}
   starting_Dialogue:
   - Welp here we are... again.
   - "You know the drill... wait... don\u2019t tell me you forgot? "
@@ -189,7 +189,7 @@ MonoBehaviour:
   - Keep that up until you meet your community service quota.
   - Now, scram.
   out_Of_Bounds_Dialogue:
-  - Fucks sake you can't do anything right.
+  - Ugh, you really can't do anything right.
   - "You can't be running off before we\u2019re done with you."
   - Get back to work.
   current_Dialogue_String_I: 0
