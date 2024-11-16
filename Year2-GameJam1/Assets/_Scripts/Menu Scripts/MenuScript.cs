@@ -1,15 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    public CanvasGroup OptionPanel;
+    //public CanvasGroup OptionPanel;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
 
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
+/*
     public void Options()
     {
         OptionPanel.alpha = 1;
@@ -21,7 +28,7 @@ public class MenuScript : MonoBehaviour
         OptionPanel.alpha = 0;
         OptionPanel.blocksRaycasts = false;
     }
-
+*/
     public void QuitGame()
     {
         Application.Quit();
