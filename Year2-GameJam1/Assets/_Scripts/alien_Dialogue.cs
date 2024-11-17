@@ -101,7 +101,7 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
 
             }
         }
-        AnimationFunction(); // Checking if the player is in dialogue, and if so, to play the correct animations. Very bad as it is in Update and thus constantly running every frame.
+       // AnimationFunction(); // Checking if the player is in dialogue, and if so, to play the correct animations. Very bad as it is in Update and thus constantly running every frame.
         
     }// end Update()
 
@@ -186,19 +186,19 @@ public class alien_Dialogue : MonoBehaviour, IInteractable
     {
         Start_Dialogue("Interact");
     }// end Interact()
-    public void AnimationFunction() //for activating the animations.
-    {
-        if (in_Dialogue == true)
-        {
-            twink_animator.SetBool("BeIdle", false); //Sets twink back to his talking anim
-            twink_face_animator.SetBool("twinkIsTalking", true); // plays mouth opening and closing animation
-        }
-        else
-        {
-            twink_animator.SetBool("BeIdle", true); //Sets twink back to his talking anim
-            twink_face_animator.SetBool("twinkIsTalking", false); // mouth stops yapping
-        }
-    }
+   // public void AnimationFunction() //for activating the animations.
+   // {
+       // if (in_Dialogue == true)
+      //  {
+        //    twink_animator.SetBool("BeIdle", false); //Sets twink back to his talking anim
+         //   twink_face_animator.SetBool("twinkIsTalking", true); // plays mouth opening and closing animation
+      //  }
+      //  else
+      //  {
+       //     twink_animator.SetBool("BeIdle", true); //Sets twink back to his talking anim
+       //     twink_face_animator.SetBool("twinkIsTalking", false); // mouth stops yapping
+      //  }
+   // }
     
     
 }// end script
